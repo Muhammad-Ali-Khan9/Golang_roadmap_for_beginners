@@ -17,6 +17,65 @@ This repo was created to serve as a guide to developers who intend to go into ba
 
 - ### You can read this book [introducing go](/static/books/book1.pdf) . I found it quit interesting as it is very much beginners friendly with some excercise at the end of each chapter
 
+# Go Routines
+- ### Goroutines are lightweight threads managed by the Go runtime. They enable functions to run concurrently, making it easy to build scalable and efficient programs. Unlike traditional threads, they are very cheap in terms of memory and performance. Goroutines are often combined with channels to communicate safely between concurrent tasks.
+
+- ### Why use Goroutines in Backend Development?
+  - They allow handling **multiple requests at the same time** without blocking.  
+  - Perfect for building **high-performance APIs, servers, and microservices**.  
+  - Useful for tasks like **database queries, network calls, and background jobs** that can run in parallel.  
+  - Enable **better resource utilization** compared to traditional threading models.
+
+- ### References:
+  - [Official Concurrency Guide](https://go.dev/doc/effective_go#concurrency)  
+  - [Go by Example - Goroutines](https://gobyexample.com/goroutines)
+
+# Go Project Structure
+- ### Go projects follow a simple and clear structure that makes code easier to organize and maintain. Following a consistent structure is important for readability and scalability in backend development.
+
+- ### Typical Project Structure:
+myapp/
+│── go.mod # Module definition (project name, dependencies)
+│── go.sum # Dependency checksums
+│── cmd/ # Main applications of the project
+│ └── myapp/ # Entry point for the app (main.go here)
+│── internal/ # Private packages only for use within this project
+│── pkg/ # Public packages that can be reused across projects
+│── api/ # Protobuf/OpenAPI definitions (if building APIs)
+│── configs/ # Configuration files
+│── scripts/ # Utility scripts
+│── deployments/ # Deployment configs (Docker, Kubernetes, etc.)
+│── web/ # Frontend files (if any)
+│── README.md
+
+- ### References:
+  - [Practical Go Project Layout](https://github.com/golang-standards/project-layout)
+
+# Go Modules
+- ### A module is a collection of Go packages with a `go.mod` file at its root. Go modules make it easy to manage dependencies and versioning across projects.
+
+- ### Working with Modules
+  - Initialize a module:
+    ```bash
+    go mod init github.com/username/myapp
+    ```
+  - Add dependencies:
+    ```bash
+    go get github.com/gin-gonic/gin
+    ```
+  - Clean up unused dependencies:
+    ```bash
+    go mod tidy
+    ```
+
+- ### Why are Modules Important?
+  - They make dependency management explicit and reproducible.  
+  - Allow versioning of dependencies across different projects.  
+  - Ensure builds are **consistent**, no matter where the code is run.  
+
+- ### References:
+  - [Go Modules Reference](https://go.dev/ref/mod)
+
 # JWT 
 - ### [JWT](https://github.com/golang-jwt/jwt) :  Authorization is the most common scenario for using JWT. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token. Single Sign On is a feature that widely uses JWT nowadays, because of its small overhead and its ability to be easily used across different domains.
 # Database
