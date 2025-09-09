@@ -34,20 +34,21 @@ This repo was created to serve as a guide to developers who intend to go into ba
 - ### Go projects follow a simple and clear structure that makes code easier to organize and maintain. Following a consistent structure is important for readability and scalability in backend development.
 
 - ### Typical Project Structure:
+```text
 myapp/
-│── go.mod # Module definition (project name, dependencies)
-│── go.sum # Dependency checksums
-│── cmd/ # Main applications of the project
-│ └── myapp/ # Entry point for the app (main.go here)
-│── internal/ # Private packages only for use within this project
-│── pkg/ # Public packages that can be reused across projects
-│── api/ # Protobuf/OpenAPI definitions (if building APIs)
-│── configs/ # Configuration files
-│── scripts/ # Utility scripts
-│── deployments/ # Deployment configs (Docker, Kubernetes, etc.)
-│── web/ # Frontend files (if any)
+│── go.mod          # Module definition (project name, dependencies)
+│── go.sum          # Dependency checksums
+│── cmd/            # Main applications of the project
+│    └── myapp/     # Entry point for the app (main.go here)
+│── internal/       # Private packages only for use within this project
+│── pkg/            # Public packages that can be reused across projects
+│── api/            # Protobuf/OpenAPI definitions (if building APIs)
+│── configs/        # Configuration files
+│── scripts/        # Utility scripts
+│── deployments/    # Deployment configs (Docker, Kubernetes, etc.)
+│── web/            # Frontend files (if any)
 │── README.md
-
+```
 - ### References:
   - [Practical Go Project Layout](https://github.com/golang-standards/project-layout)
 
